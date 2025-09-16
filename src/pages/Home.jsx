@@ -96,9 +96,9 @@ export default function Home(){
         <div className="w-full max-w-6xl flex items-center dark:bg-gray-900 bg-white rounded-2xl shadow-2xl border border-gray-200 sm:p-12 p-8">
           <FaUpload className=" text-green-500 mr-6 h-10 w-10" />
           <h5 className="text-left font-bold text-4xl dark:text-white">Upload Waste</h5>
-          
+          <p className="text-2xl mt-4 ">Turn your recyclable into rewards</p>
         </div>
-        <p className="text-2xl ">Turn your recyclable into rewards</p>
+        
         </div>
 
       
