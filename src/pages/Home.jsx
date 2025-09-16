@@ -2,6 +2,8 @@ import React, { useState, useEffect} from "react";
 import { FaSun, FaMoon, FaUpload } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import coin from "../assets/icons8-coin-48.png";
+import { Smartphone } from "lucide-react";
+
 
 export default function Home(){
    const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -93,10 +95,39 @@ export default function Home(){
 
          <div className=" mt-16 flex pl-8 ">
 
-        <div className="w-full max-w-6xl flex items-center dark:bg-gray-900 bg-white rounded-2xl shadow-2xl border border-gray-200 sm:p-12 p-8">
-          <FaUpload className=" text-green-500 mr-6 h-10 w-10" />
-          <h5 className="text-left font-bold text-4xl dark:text-white">Upload Waste</h5>
-          <p className="text-2xl mt-4 ">Turn your recyclable into rewards</p>
+        <div className="w-full max-w-6xl dark:bg-gray-900 bg-white rounded-2xl shadow-2xl border border-gray-200 sm:p-12 p-8">
+    
+          <h5 className="text-left  flex items-center  font-bold text-4xl dark:text-white">
+            <FaUpload className=" text-green-500 mr-6 h-10 w-10" />Upload Waste</h5>
+          <p className="text-2xl mt-4 text-gray-700 ">Turn your recyclable into rewards</p>
+          <div className="flex items-center">
+          <div className="w-full sm:w-80 p-10 mt-8 bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-green-500 border-l-8 border-l-green-500 hover:shadow-2xl transition text-center">
+                 <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-green-500 mb-4">
+                     <h6 className="text-white text-xl font-bold dark:text-white">
+                  <img
+                src={logo}
+                alt="Logo"
+                className="h-6 w-6 rounded-full object-contain"
+              /></h6>
+                 </div>
+                   <h4 className="text-xl font-bold mb-2 text-center dark:text-white">Plastic </h4>
+                   <p className="text-lg sm:text-md text-gray-600 dark:text-white">
+                    5pts/bottle
+                   </p>
+               </div>
+
+               <div className="w-full sm:w-80 p-10 mt-8 bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-green-500 border-l-8 border-l-green-500 hover:shadow-2xl transition text-center">
+                 <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-green-500 mb-4">
+                     <h6 className="text-white text-xl font-bold dark:text-white">
+                    <Smartphone className="text-purple-500 w-6 h-6" />
+                  </h6>
+                 </div>
+                   <h4 className="text-xl font-bold mb-2 text-center dark:text-white">E-Waste </h4>
+                   <p className="text-lg sm:text-md text-gray-600 dark:text-white">
+                     1000pts/Kg
+                   </p>
+               </div>
+               </div>
         </div>
         
         </div>
