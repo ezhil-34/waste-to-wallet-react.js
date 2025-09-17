@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
+import Rewards from "./pages/Rewards";
 
 function App() {
  
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Upload" element={<Upload />} />
+          <Route path="/Rewards" element={<Rewards />} />
         </Routes>
          <ToastContainer position="bottom-right" autoClose={2000} />
       </Router>

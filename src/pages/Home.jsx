@@ -52,7 +52,8 @@ export default function Home(){
             <button onClick= {() => navigate("/Upload")}
               className="text-2xl px-6 py-3 dark:text-white hover:text-gray-500">Upload</button>
 
-            <button className="text-2xl px-6 py-3  dark:text-white hover:text-gray-500">Rewards</button>
+            <button onClick={() => navigate("/Rewards")}
+            className="text-2xl px-6 py-3  dark:text-white hover:text-gray-500">Rewards</button>
 
             <button className="text-2xl px-6 py-3  dark:text-white hover:text-gray-500">Blogs</button>
 

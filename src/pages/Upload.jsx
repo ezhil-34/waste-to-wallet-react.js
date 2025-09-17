@@ -94,7 +94,8 @@ export default function Home() {
               >
                 Upload
               </button>
-              <button className="text-2xl px-6 py-3 dark:text-white hover:text-gray-500">
+              <button onClick={() => navigate("/Rewards")}
+              className="text-2xl px-6 py-3 dark:text-white hover:text-gray-500">
                 Rewards
               </button>
               <button className="text-2xl px-6 py-3 dark:text-white hover:text-gray-500">
@@ -217,7 +218,7 @@ export default function Home() {
 
         <div className="w-full  max-w-7xl dark:bg-gray-900 bg-white rounded-2xl shadow-2xl border border-gray-200 sm:p-12 p-8">
       
-          <h5 className="text-center  font-bold text-4xl dark:text-white">How it works</h5>
+          <h5 className="text-center  font-bold text-4xl dark:text-white">Upload Guideliness</h5>
   
 
            <div className="flex w-50 justify-center items-stretch gap-6 mt-16 sm:gap-8  px-4 sm:px-20">
@@ -226,9 +227,9 @@ export default function Home() {
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-blue-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">1</h6>
                  </div>
-                   <h4 className="text-xl font-bold mb-2 text-center dark:text-white">Submit Waste</h4>
+                   <h4 className="text-xl font-bold mb-2 text-center dark:text-white">Clean Items</h4>
                    <p className="text-lg sm:text-md text-gray-600 dark:text-white">
-                   Take photo of your recyclable materials and upload them through our app
+                   Make sure recyclables items are clean and empty
                    </p>
                </div>
 
@@ -236,9 +237,9 @@ export default function Home() {
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-green-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">2</h6>
                  </div>
-                   <h4 className="text-xl font-bold mb-2 text-center dark:text-white">Get Verified</h4>
+                   <h4 className="text-xl font-bold mb-2 text-center dark:text-white">Clear Photo</h4>
                    <p className="text-lg sm:text-md text-gray-600 dark:text-white">
-                    Our verification system reviews and approves your submissions
+                    Take a well fit photo showing all items
                    </p>
                </div>
 
@@ -246,9 +247,9 @@ export default function Home() {
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-yellow-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">3</h6>
                  </div>
-                   <h4 className="text-xl font-bold mb-2 text-center dark:text-white">Earn & Redeem</h4>
+                   <h4 className="text-xl font-bold mb-2 text-center dark:text-white">Accurate Count </h4>
                    <p className="text-lg sm:text-md text-gray-600 dark:text-white">
-                    Collect points and redeem them for rewards in our marketplace
+                    Count items carefully for fait rewards
                    </p>
                </div>
 
