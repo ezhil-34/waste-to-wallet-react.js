@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Open from "./pages/Open";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -18,7 +20,7 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Upload" element={<Upload />} />
         </Routes>
-        
+         <ToastContainer position="bottom-right" autoClose={2000} />
       </Router>
     );
   

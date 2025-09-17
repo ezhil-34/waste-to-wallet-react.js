@@ -46,10 +46,11 @@ export default function Home(){
 
           <div className="flex flex-row items-center gap-8 px-12 ml-64">
 
-            <button onClick= {() => navigate("/Upload")}
-              className="text-2xl  px-6 py-2 dark:text-white hover:text-gray-500">Home</button>
+            <button 
+              className="text-2xl  px-6 py-2 dark:text-white shadow-[0_0_20px_#3b82f6] rounded-full hover:text-gray-500">Home</button>
 
-            <button className="text-2xl px-6 py-3 dark:text-white hover:text-gray-500">Upload</button>
+            <button onClick= {() => navigate("/Upload")}
+              className="text-2xl px-6 py-3 dark:text-white hover:text-gray-500">Upload</button>
 
             <button className="text-2xl px-6 py-3  dark:text-white hover:text-gray-500">Rewards</button>
 
