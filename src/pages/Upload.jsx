@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import { FaSun, FaMoon, FaUpload } from "react-icons/fa";
 import { Camera, Sparkles } from "lucide-react";
 import logo from "../assets/logo.png";
 import coin from "../assets/icons8-coin-48.png";
 import { toast } from "react-toastify";
+import { DarkModeContext } from "../App";
+
 
 export default function Home() {
   const navigate = useNavigate();
@@ -19,19 +21,9 @@ export default function Home() {
   const [category, setCategory] = useState(null);
   const [quantity, setQuantity] = useState("");
   const [photo, setPhoto] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    const saveMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(saveMode);
-  }, []);
 
-  const toggleDarkMode = () => {
-    setDarkMode((prev) => {
-      localStorage.setItem("darkMode", !prev);
-      return !prev;
-    });
-  };
+  const {darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const handleFile = (e) => setPhoto(e.target.files[0]);
 
@@ -145,7 +137,7 @@ export default function Home() {
             <form onSubmit={handleSubmit}>
               
               <div>
-                <label className="block text-xl font-bold mt-8 text-gray-700 mb-1">
+                <label className="block dark:text-white text-xl font-bold mt-8 text-gray-700 mb-1">
                   Waste Category
                 </label>
                 <select
@@ -154,7 +146,7 @@ export default function Home() {
                     const item = items.find((i) => i.name === e.target.value);
                     setCategory(item);
                   }}
-                  className="w-full rounded-xl mt-4 h-12 border border-gray-300 p-3 focus:border-green-500 focus:ring-green-800"
+                  className="w-full  rounded-xl mt-4 h-12 border border-gray-300 p-3 focus:border-green-500 focus:ring-green-800"
                 >
                   <option value="" >
                     Select category
@@ -169,7 +161,7 @@ export default function Home() {
 
              
               <div>
-                <label className="block text-xl mt-4 font-bold text-gray-700 mb-1">
+                <label className="block text-xl mt-4 dark:text-white font-bold text-gray-700 mb-1">
                   Quantity {category ? `(${category.type})` : ""}
                 </label>
                 <input
@@ -184,12 +176,12 @@ export default function Home() {
 
               {/* Upload Photo */}
               <div>
-                <label className="block text-xl font-bold mt-4 text-gray-700 mb-2">
+                <label className="block dark:text-white text-xl font-bold mt-4 text-gray-700 mb-2">
                   Upload Photo
                 </label>
                 <label className="flex flex-col items-center mt-4 justify-center w-full border-2 border-dashed border-gray-300 rounded-2xl p-6 cursor-pointer hover:border-green-500">
                   <Camera className="text-green-500 mb-2" size={32} />
-                  <span className="text-gray-500 text-xl font-bold text-center">
+                  <span className="text-gray-500 dark:text-white text-xl font-bold text-center">
                     Take a photo of your recyclables
                   </span>
                   <span className="mt-4 text-xl inline-block px-4 py-1 bg-green-100 text-green-700 rounded-lg">

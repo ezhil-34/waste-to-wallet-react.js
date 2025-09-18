@@ -1,26 +1,18 @@
-import React, { useState, useEffect} from "react";
+import React, { useContext} from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import coin from "../assets/icons8-coin-48.png";
-import { Gift } from "lucide-react";
+import { Gift, Smartphone, CreditCard, ShoppingCart,  } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
+import { SiAmazon, SiGooglepay } from "react-icons/si";
+import { DarkModeContext } from "../App";
 
 export default function Rewards(){
  
    const navigate = useNavigate();
 
-   const [darkMode, setDarkMode] = useState(false);
 
-   useEffect(() => {
-      const saveMode = localStorage.getItem("darkMode") === true;
-      setDarkMode(saveMode);
-   }, []);
-
-   const toogleDarkMode = () => {
-    setDarkMode(!darkMode);
-    localStorage.setItem("darkMode",!darkMode);
-   };
+   const {darkMode, toggleDarkMode } = useContext(DarkModeContext);
     return (
       <div className={darkMode ? "dark" : ""}>
         <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white  dark:from-gray-900 dark:to-gray-800 transition-colors duration-500">
@@ -61,12 +53,12 @@ export default function Rewards(){
 
 
           </div>
-          <button className=" ml-32 px-4 py-2 flex items-center gap-2  bg-gray-100 dark:bg-gray-700  text-gray-900 dark:text-white rounded-lg transition-colors duration-300"
-                  onClick={toogleDarkMode}
-          >
+          <button
+              className="ml-32 px-4 py-2 flex items-center gap-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg transition-colors duration-300"
+              onClick={toggleDarkMode}
+            >
               {darkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}
-              
-          </button>
+            </button>
         
           <div class="ml-4 w-56 h-16 bg-white rounded-3xl  dark:bg-black shadow-lg flex items-center justify-center text-white font-semibold hover:bg-[#FFD700]">
             <img
@@ -88,18 +80,88 @@ export default function Rewards(){
 
         <div className="pt-44 pl-8  ">
              <h4 className="text-6xl font-bold flex items-center dark:text-white "> Rewards Store <span><Gift className=" text-red-500 h-12 w-12 ml-8" /></span> </h4>
-             <p className="text-3xl mt-4 ">Redeem your eco-points for amazing rewards</p>
+             <p className="text-3xl dark:text-white mt-4 ">Redeem your eco-points for amazing rewards</p>
          
         </div>
         <div>
 
         <div className="flex items-center ml-8 mt-8 gap-3">
-            <button className=" text-3xl px-6 py-2 rounded-lg border border-sky-500 shadow-[0_0_20px_#3b82f6]">All</button>
-            <button className=" text-3xl px-6 py-2 rounded-lg border border-sky-500 ">Mobile</button>
-            <button className=" text-3xl px-6 py-2 rounded-lg border border-sky-500 ">Transport</button>
-            <button className=" text-3xl px-6 py-2 rounded-lg border border-sky-500 ">Shopping</button>
-             <button className=" text-3xl px-6 py-2 rounded-lg border border-sky-500 ">Gaming</button>
+            <button className=" text-3xl px-6 py-2 rounded-lg border dark:text-white border-sky-500 shadow-[0_0_20px_#3b82f6]">All</button>
+            <button className=" text-3xl px-6 py-2 rounded-lg border dark:text-white border-sky-500 ">Mobile</button>
+            <button className=" text-3xl px-6 py-2 rounded-lg border dark:text-white border-sky-500 ">Transport</button>
+            <button className=" text-3xl px-6 py-2 rounded-lg border dark:text-white border-sky-500 ">Shopping</button>
+             <button className=" text-3xl px-6 py-2 rounded-lg border dark:text-white border-sky-500 ">Gaming</button>
             
+        </div>
+
+
+
+        <div className=" mt-16 px-8 " >  
+        <div className="  p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8  bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200">
+        <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-violet-800 border-l-8 border-l-violet-800 hover:shadow-2xl transition">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-violet-900 to-violet-500 mb-4">
+            <Smartphone className="text-white w-6 h-6" />
+          </div>
+          <h4 className="text-3xl font-bold dark:text-white mb-2">Mobile recharge</h4>
+          <p className="text-xl sm:text-md dark:text-white text-gray-500">
+            $100 mobile top-up
+          </p>
+          <p className="flex items-center gap-2 mt-8  text-xl dark:text-white justify-start "><span><Gift className=" text-red-500 h-8 w-8 "/></span>500 points</p>
+          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+        </div>
+
+         <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-orange-800 border-l-8 border-l-orange-800 hover:shadow-2xl transition">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-orange-900 to-orange-500 mb-4">
+            <CreditCard className="text-white w-6 h-6" />
+          </div>
+          <h4 className="text-3xl font-bold dark:text-white mb-2">Metro Card</h4>
+          <p className="text-xl sm:text-md dark:text-white text-gray-500">
+            $100 metro balance
+          </p>
+          <p className="flex items-center gap-2 mt-8  text-xl dark:text-white justify-start "><span><CreditCard className=" text-red-500 h-8 w-8 "/></span>1500 points</p>
+          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+        </div>
+
+        
+         
+
+         <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-yellow-800 border-l-8 border-l-yellow-800 hover:shadow-2xl transition">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-yellow-900 to-yellow-500 mb-4">
+            <ShoppingCart  className="text-white w-6 h-6" />
+          </div>
+          <h4 className="text-3xl font-bold dark:text-white mb-2">Grocery Voucher</h4>
+          <p className="text-xl sm:text-md dark:text-white text-gray-500">
+            $100 partner at store
+          </p>
+          <p className="flex items-center gap-2 mt-8  text-xl dark:text-white justify-start "><span><CreditCard className=" text-red-500 h-8 w-8 "/></span>1000 points</p>
+          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+        </div>
+
+         <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-[#232F3E] border-l-8 border-l-[#232F3E] hover:shadow-2xl transition">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#232F3E] mb-4">
+            <SiAmazon className="text-yellow-400 w-6 h-6" />
+          </div>
+          <h4 className="text-3xl font-bold dark:text-white mb-2">Amazon Pay </h4>
+          <p className="text-xl sm:text-md dark:text-white text-gray-500">
+            $100 redeem on amazon
+          </p>
+          <p className="flex items-center gap-2 mt-8  text-xl justify-start dark:text-white "><span><CreditCard className=" text-red-500 h-8 w-8 "/></span>5000 points</p>
+          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+        </div>
+
+         <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-violet-800 border-l-8 border-l-violet-800 hover:shadow-2xl transition">
+          <div className="flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white mb-4">
+            <SiGooglepay className="text-[#4285F4] w-6 h-6" />
+          </div>
+          <h4 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">Gpay</h4>
+          <p className="text-xl sm:text-md dark:text-white text-gray-500">
+            $100 redeem on Gpay
+          </p>
+          <p className="flex items-center gap-2 mt-8  text-xl justify-start dark:text-white "><span><CreditCard className=" text-red-500 h-8 w-8 "/></span>10000 points</p>
+          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+        </div>
+            
+        </div>
         </div>
           
         </div>

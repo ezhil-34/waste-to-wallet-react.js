@@ -1,25 +1,17 @@
-import React, { useState, useEffect} from "react";
+import React, {  useContext} from "react";
 import { FaSun, FaMoon} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import coin from "../assets/icons8-coin-48.png";
 import { RefreshCcw, Award, Gift } from "lucide-react";
+import { DarkModeContext } from "../App";
+
 
 export default function Logo() {
   const navigate = useNavigate();
 
   
-     const [darkMode, setDarkMode] = useState(false);
-  
-     useEffect(() => {
-        const saveMode = localStorage.getItem("darkMode") === true;
-        setDarkMode(saveMode);
-     }, []);
-  
-     const toogleDarkMode = () => {
-      setDarkMode(!darkMode);
-      localStorage.setItem("darkMode",!darkMode);
-     };
+     const {darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -45,9 +37,9 @@ export default function Logo() {
             </p>
           </div>
         </div>
-        <div className="flex items-center flex justify-end">
+        <div className="flex items-center  justify-end">
         <button className="mr-6 px-4 py-2 flex items-center gap-2  bg-gray-100 dark:bg-gray-700  text-gray-900 dark:text-white rounded-lg transition-colors duration-300"
-                          onClick={toogleDarkMode}
+                          onClick={toggleDarkMode}
                   >
                       {darkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}
                       
