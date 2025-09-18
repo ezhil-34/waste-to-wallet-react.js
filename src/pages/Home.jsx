@@ -11,6 +11,8 @@ export default function Home(){
    const storedUser = JSON.parse(localStorage.getItem("user"));
    const navigate = useNavigate();
 
+   const firstLetter = storedUser?.name?.charAt(0)?.toUpperCase() || "?";
+
   const {darkMode, toggleDarkMode } = useContext(DarkModeContext);
     return (
       <div className={darkMode ? "dark" : ""}>
@@ -35,7 +37,7 @@ export default function Home(){
             </p>
           </div >
 
-          <div className="flex flex-row items-center gap-8 px-12 ml-64">
+          <div className="flex flex-row items-center gap-8 px-10 ml-64">
 
             <button 
               className="text-2xl  px-6 py-2 dark:text-white shadow-[0_0_20px_#3b82f6] rounded-full hover:text-gray-500">Home</button>
@@ -49,11 +51,14 @@ export default function Home(){
             <button className="text-2xl px-6 py-3  dark:text-white hover:text-gray-500">Blogs</button>
 
             <button className ="text-2xl px-6 py-3  dark:text-white hover:text-gray-500">Donate</button>
-            <button className ="text-2xl px-6 py-3  dark:text-white hover:text-gray-500"></button>
+
+            
+              <button className="ml-32 w-16 h-16 rounded-full bg-sky-500 text-white font-semibold text-2xl shadow hover:scale-105 transition tranform focus:outline-none focus:ring-2 focus:ring-sky-500">{firstLetter}</button>
+           
 
 
           </div>
-          <button  className="ml-32 px-4 py-2 flex items-center gap-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg transition-colors duration-300"
+          <button  className=" px-4 py-2 flex items-center gap-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg transition-colors duration-300"
                 onClick={toggleDarkMode}
           >
               {darkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}

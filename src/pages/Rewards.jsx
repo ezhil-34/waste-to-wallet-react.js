@@ -10,7 +10,8 @@ import { DarkModeContext } from "../App";
 export default function Rewards(){
  
    const navigate = useNavigate();
-
+   const storedUser = JSON.parse(localStorage.getItem("user"));
+   const firstLetter = storedUser?.name?.charAt(0)?.toUpperCase() || "?";
 
    const {darkMode, toggleDarkMode } = useContext(DarkModeContext);
     return (
@@ -36,7 +37,7 @@ export default function Rewards(){
             </p>
           </div >
 
-          <div className="flex flex-row items-center gap-8 px-12 ml-64">
+          <div className="flex flex-row items-center gap-8 px-8 ml-64">
 
             <button onClick= {() => navigate("/Home")}
               className="text-2xl  px-6 py-2 dark:text-white  rounded-full hover:text-gray-500">Home</button>
@@ -51,10 +52,14 @@ export default function Rewards(){
 
             <button className ="text-2xl px-6 py-3  dark:text-white hover:text-gray-500">Donate</button>
 
+            
+              <button className="ml-32 w-16 h-16 rounded-full bg-sky-500 text-white font-semibold text-2xl shadow hover:scale-105 transition tranform focus:outline-none focus:ring-2 focus:ring-sky-500">{firstLetter}</button>
+            
+
 
           </div>
           <button
-              className="ml-32 px-4 py-2 flex items-center gap-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg transition-colors duration-300"
+              className=" px-4 py-2 flex items-center gap-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg transition-colors duration-300"
               onClick={toggleDarkMode}
             >
               {darkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}
