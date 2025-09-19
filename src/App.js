@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext} from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 import Open from "./pages/Open";
 import Login from "./pages/Login";
@@ -8,6 +9,7 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
 import Rewards from "./pages/Rewards";
+import Profile from "./pages/Profile";
 
 
 export const DarkModeContext = createContext();
@@ -41,8 +43,10 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/Upload" element={<Upload />} />
           <Route path="/Rewards" element={<Rewards />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
-         <ToastContainer position="bottom-right" autoClose={2000} />
+         <ToastContainer position="top-right" autoClose={2000} />
+         <Toaster position="top-center" reverseOrder={false} text-lg/>
       </Router>
       </DarkModeContext.Provider>
     );

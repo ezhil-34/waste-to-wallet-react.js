@@ -6,6 +6,8 @@ import { Gift, Smartphone, CreditCard, ShoppingCart,  } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { SiAmazon, SiGooglepay } from "react-icons/si";
 import { DarkModeContext } from "../App";
+import toast from "react-hot-toast";
+
 
 export default function Rewards(){
  
@@ -17,7 +19,7 @@ export default function Rewards(){
     return (
       <div className={darkMode ? "dark" : ""}>
         <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white  dark:from-gray-900 dark:to-gray-800 transition-colors duration-500">
-            <div className="fixed top-0 w-full left-0 flex flex-wrap items-center justify-between p-8 bg-sky-200 dark:bg-gray-900 z-50 dark:shadow-gray-800/80 shadow-lg backdrop-blur-md">
+            <div className="fixed top-0 w-full left-0 flex flex-wrap items-center justify-between p-6 bg-sky-200 dark:bg-gray-900 z-50 dark:shadow-gray-800/80 shadow-lg backdrop-blur-md">
         <div className="flex items-center">
           <div className="p-1 rounded-full ml-2 sm:ml-4 bg-gradient-to-r from-green-400 to-blue-500">
             <div className="rounded-full p-2">
@@ -53,7 +55,8 @@ export default function Rewards(){
             <button className ="text-2xl px-6 py-3  dark:text-white hover:text-gray-500">Donate</button>
 
             
-              <button className="ml-32 w-16 h-16 rounded-full bg-sky-500 text-white font-semibold text-2xl shadow hover:scale-105 transition tranform focus:outline-none focus:ring-2 focus:ring-sky-500">{firstLetter}</button>
+              <button onClick={() => navigate("/Profile")}
+              className="ml-32 w-16 h-16 rounded-full bg-sky-500 text-white font-semibold text-2xl shadow hover:scale-105 transition tranform focus:outline-none focus:ring-2 focus:ring-sky-500">{firstLetter}</button>
             
 
 
@@ -103,7 +106,7 @@ export default function Rewards(){
 
         <div className=" mt-16 px-8 " >  
         <div className="  p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8  bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200">
-        <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-violet-800 border-l-8 border-l-violet-800 hover:shadow-2xl transition">
+        <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-violet-800 border-l-8 border-l-violet-800 hover:shadow-2xl  transition">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-violet-900 to-violet-500 mb-4">
             <Smartphone className="text-white w-6 h-6" />
           </div>
@@ -112,7 +115,8 @@ export default function Rewards(){
             $100 mobile top-up
           </p>
           <p className="flex items-center gap-2 mt-8  text-xl dark:text-white justify-start "><span><Gift className=" text-red-500 h-8 w-8 "/></span>500 points</p>
-          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+          <button onClick={() => toast.success("Reward Redeemed! 🎉")} className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+          <p className="text-gray-500 text-xl flex justify-center mt-4">Proceed within 24 hours</p>
         </div>
 
          <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-orange-800 border-l-8 border-l-orange-800 hover:shadow-2xl transition">
@@ -124,7 +128,8 @@ export default function Rewards(){
             $100 metro balance
           </p>
           <p className="flex items-center gap-2 mt-8  text-xl dark:text-white justify-start "><span><CreditCard className=" text-red-500 h-8 w-8 "/></span>1500 points</p>
-          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+          <button onClick={() => toast.success("Reward Redeemed! 🎉")} className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+           <p className="text-gray-500 text-xl flex justify-center mt-4">Proceed within 24 hours</p>
         </div>
 
         
@@ -139,7 +144,8 @@ export default function Rewards(){
             $100 partner at store
           </p>
           <p className="flex items-center gap-2 mt-8  text-xl dark:text-white justify-start "><span><CreditCard className=" text-red-500 h-8 w-8 "/></span>1000 points</p>
-          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+          <button onClick={() => toast.success("Reward Redeemed! 🎉")} className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+           <p className="text-gray-500 text-xl flex justify-center mt-4">Proceed within 24 hours</p>
         </div>
 
          <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-[#232F3E] border-l-8 border-l-[#232F3E] hover:shadow-2xl transition">
@@ -151,7 +157,8 @@ export default function Rewards(){
             $100 redeem on amazon
           </p>
           <p className="flex items-center gap-2 mt-8  text-xl justify-start dark:text-white "><span><CreditCard className=" text-red-500 h-8 w-8 "/></span>5000 points</p>
-          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+          <button onClick={() => toast.success("Reward Redeemed! 🎉")}  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+           <p className="text-gray-500 text-xl flex justify-center mt-4">Proceed within 24 hours</p>
         </div>
 
          <div className="w-full  p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-violet-800 border-l-8 border-l-violet-800 hover:shadow-2xl transition">
@@ -163,7 +170,8 @@ export default function Rewards(){
             $100 redeem on Gpay
           </p>
           <p className="flex items-center gap-2 mt-8  text-xl justify-start dark:text-white "><span><CreditCard className=" text-red-500 h-8 w-8 "/></span>10000 points</p>
-          <button  className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+          <button onClick={() => toast.success("Reward Redeemed! 🎉")} className="w-full mt-8 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition">Redeem Now</button>
+           <p className="text-gray-500 text-xl flex justify-center mt-4">Proceed within 24 hours</p>
         </div>
             
         </div>

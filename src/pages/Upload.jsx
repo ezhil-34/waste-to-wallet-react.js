@@ -99,7 +99,8 @@ export default function Home() {
               </button>
              
 
-              <button className="ml-32 w-16 h-16 rounded-full bg-sky-500 text-white font-semibold text-2xl shadow hover:scale-105 transition tranform focus:outline-none focus:ring-2 focus:ring-sky-500">{firstLetter}</button>
+              <button onClick={() => navigate("/Profile")}
+                 className="ml-32 w-16 h-16 rounded-full bg-sky-500 text-white font-semibold text-2xl shadow hover:scale-105 transition tranform focus:outline-none focus:ring-2 focus:ring-sky-500">{firstLetter}</button>
             </div>
 
             
@@ -219,7 +220,7 @@ export default function Home() {
 
            <div className="flex w-50 justify-center items-stretch gap-6 mt-16 sm:gap-8  px-4 sm:px-20">
         
-               <div className="w-full  p-10 dark:bg-gray-900 bg-white rounded-2xl shadow-md border border-blue-500 border-l-8 border-l-blue-500 hover:shadow-2xl transition text-center">
+               <div className="w-full  p-10 dark:bg-gray-900 bg-white rounded-2xl shadow-md border border-blue-500 border-l-8 border-l-blue-500 hover:shadow-2xl hover:shadow-blue-500 transition text-center">
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-blue-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">1</h6>
                  </div>
@@ -229,7 +230,7 @@ export default function Home() {
                    </p>
                </div>
 
-                <div className="w-full  p-10 dark:bg-gray-900 bg-white rounded-2xl shadow-md border border-green-500 border-l-8 border-l-green-500 hover:shadow-2xl transition text-center">
+                <div className="w-full  p-10 dark:bg-gray-900 bg-white rounded-2xl shadow-md border border-green-500 border-l-8 border-l-green-500 hover:shadow-2xl hover:shadow-green-500 transition text-center">
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-green-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">2</h6>
                  </div>
@@ -239,7 +240,7 @@ export default function Home() {
                    </p>
                </div>
 
-               <div className="w-full  p-10 bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-yellow-500 border-l-8 border-l-yellow-500 hover:shadow-2xl transition text-center">
+               <div className="w-full  p-10 bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-yellow-500 border-l-8 border-l-yellow-500 hover:shadow-2xl hover:shadow-yellow-500 transition text-center">
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-yellow-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">3</h6>
                  </div>

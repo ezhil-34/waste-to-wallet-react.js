@@ -72,7 +72,7 @@ export default function Logo() {
       
       <div className="flex flex-wrap justify-center items-stretch gap-6 mt-16 sm:gap-8 py-12 px-4 sm:px-12">
         
-        <div className="w-full sm:w-80 p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-blue-500 border-l-8 border-l-blue-500 hover:shadow-2xl transition">
+        <div className="w-full sm:w-80 p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-blue-500 border-l-8 border-l-blue-500 hover:shadow-blue-500 hover:shadow-2xl transition">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-200 mb-4">
             <RefreshCcw className="text-blue-500 w-6 h-6" />
           </div>
@@ -83,7 +83,7 @@ export default function Logo() {
         </div>
 
        
-        <div className="w-full sm:w-80 p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-green-500 border-l-8 border-l-green-500 hover:shadow-2xl transition">
+        <div className="w-full sm:w-80 p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-green-500 border-l-8 border-l-green-500 hover:shadow-2xl hover:shadow-green-500 transition">
           <div className="flex items-center justify-center w-12 h-12 rounded-full dark:text-white bg-green-200 mb-4">
             <Award className="text-green-500 w-6 h-6" />
           </div>
@@ -94,7 +94,7 @@ export default function Logo() {
         </div>
 
         
-        <div className="w-full sm:w-80 p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-yellow-500 border-l-8 border-l-yellow-500 hover:shadow-2xl transition">
+        <div className="w-full sm:w-80 p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-yellow-500 border-l-8 border-l-yellow-500 hover:shadow-2xl hover:shadow-yellow-500  transition">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-yellow-200 mb-4">
             <img
               src={coin}
@@ -109,7 +109,7 @@ export default function Logo() {
         </div>
 
        
-        <div className="w-full sm:w-80 p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-purple-500 border-l-8 border-l-purple-500 hover:shadow-2xl transition">
+        <div className="w-full sm:w-80 p-6 bg-white rounded-2xl dark:bg-gray-900 shadow-md border border-purple-500 border-l-8 border-l-purple-500 hover:shadow-2xl hover:shadow-purple-500 transition">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-200 mb-4">
             <Gift className="text-purple-500 w-6 h-6" />
           </div>
@@ -128,7 +128,7 @@ export default function Logo() {
 
            <div className="flex flex-wrap justify-center items-stretch gap-6 mt-16 sm:gap-8  px-4 sm:px-12">
         
-               <div className="w-full sm:w-80 p-10 dark:bg-gray-900 bg-white rounded-2xl shadow-md border border-blue-500 border-l-8 border-l-blue-500 hover:shadow-2xl transition text-center">
+               <div className="w-full sm:w-80 p-10 dark:bg-gray-900 bg-white rounded-2xl shadow-md border border-blue-500 border-l-8 border-l-blue-500 hover:shadow-2xl hover:shadow-blue-500 transition text-center">
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-blue-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">1</h6>
                  </div>
@@ -138,7 +138,7 @@ export default function Logo() {
                    </p>
                </div>
 
-                <div className="w-full sm:w-80 p-10 dark:bg-gray-900 bg-white rounded-2xl shadow-md border border-green-500 border-l-8 border-l-green-500 hover:shadow-2xl transition text-center">
+                <div className="w-full sm:w-80 p-10 dark:bg-gray-900 bg-white rounded-2xl shadow-md border border-green-500 border-l-8 border-l-green-500 hover:shadow-2xl hover:shadow-green-500 transition text-center">
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-green-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">2</h6>
                  </div>
@@ -148,7 +148,7 @@ export default function Logo() {
                    </p>
                </div>
 
-               <div className="w-full sm:w-80 p-10 bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-yellow-500 border-l-8 border-l-yellow-500 hover:shadow-2xl transition text-center">
+               <div className="w-full sm:w-80 p-10 bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-yellow-500 border-l-8 border-l-yellow-500 hover:shadow-2xl hover:shadow-yellow-500 transition text-center">
                  <div className="flex items-center justify-center mx-auto w-12 h-12 rounded-full bg-yellow-500 mb-4">
                      <h6 className="text-white text-xl font-bold dark:text-white">3</h6>
                  </div>
