@@ -24,12 +24,16 @@ Citizens upload details of recyclable waste (type + quantity + photo) → Partne
   - Points calculated per kilogram & waste type  
   - Redeem points for phone recharge, metro cards, or grocery vouchers
 
-- **UI/UX**  
-  - Light-coffee (#EED6C4) background with dark-brown (#5C4033) typography  
-  - Rounded cards, cream buttons, warm eco-friendly design  
+- **UI/UX**    
   - Responsive layout built with **React + Tailwind CSS**
 
 ---
 
 ## 🏗️ Architecture
+
+-Frontend (React + Tailwind)
+│ REST API
+-Backend (Flask + Python)
+│ SQLAlchemy ORM
+-Database (MySQL)
 
