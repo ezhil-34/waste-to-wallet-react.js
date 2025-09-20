@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# ☕ Waste-to-Wallet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Turn everyday recyclables into rewards!  
+Citizens upload details of recyclable waste (type + quantity + photo) → Partner recycling companies schedule pickups → Users earn points redeemable for **mobile recharges, metro cards, or groceries**.
 
-## Available Scripts
+![License](https://img.shields.io/badge/license-MIT-green)
+![Stack](https://img.shields.io/badge/stack-React%20%2B%20Flask%20%2B%20MySQL-blue)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Key Features
+- **Citizen Portal**  
+  - Register/Login with JWT authentication  
+  - Submit waste details: type, quantity (kg), photo upload  
+  - Track reward points and redemption history  
+  - View personal recycling impact charts (monthly/yearly)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Partner / Recycler Dashboard**  
+  - Receive pickup requests in real time  
+  - Update status: *Pending → Collected*  
+  - Analytics on waste type & quantity collected
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Gamified Rewards**  
+  - Points calculated per kilogram & waste type  
+  - Redeem points for phone recharge, metro cards, or grocery vouchers
 
-### `npm test`
+- **UI/UX**    
+  - Responsive layout built with **React + Tailwind CSS**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🏗️ Architecture
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Frontend (React + Tailwind)
+│ REST API
+-Backend (Flask + Python)
+│ SQLAlchemy ORM
+-Database (MySQL)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
