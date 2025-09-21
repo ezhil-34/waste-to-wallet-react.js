@@ -33,6 +33,9 @@ function App() {
     });
   };
     return (
+      <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white
+                    dark:from-gray-900 dark:to-gray-800
+                    transition-colors duration-500">
        
       <DarkModeContext.Provider value ={{ darkMode, toggleDarkMode }}>
       <Router>
@@ -49,6 +52,7 @@ function App() {
          <Toaster position="top-center" reverseOrder={false} text-lg/>
       </Router>
       </DarkModeContext.Provider>
+      </div>
     );
   
 }
