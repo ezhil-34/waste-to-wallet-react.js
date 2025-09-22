@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { DarkModeContext } from "../App";
 import MHeader from "../components/Mheader";
 import RewardGrid from "../components/RewardGrid";
+import Manual from "../components/Manual";
 
 export default function Rewards() {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -27,6 +28,8 @@ export default function Rewards() {
         <div className="mt-16 px-8">
           <RewardGrid />
         </div>
+
+        <Manual />
       </div>
     </div>
   );
