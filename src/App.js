@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Upload from "./pages/Upload";
 import Rewards from "./pages/Rewards";
 import Profile from "./pages/Profile";
+import Option from "./pages/Option";
 
 
 export const DarkModeContext = createContext();
@@ -47,6 +48,7 @@ function App() {
           <Route path="/Upload" element={<Upload />} />
           <Route path="/Rewards" element={<Rewards />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/Option" element={<Option />} />
         </Routes>
          <ToastContainer position="top-right" autoClose={2000} />
          <Toaster position="top-center" reverseOrder={false} text-lg/>

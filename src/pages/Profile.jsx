@@ -50,7 +50,7 @@ export default function Home(){
 
           <div className="flex flex-row items-center gap-8 px-10 ml-64">
 
-            <button 
+            <button onClick={() => navigate("/Home")}
               className="text-2xl  px-6 py-2 dark:text-white  rounded-full hover:text-gray-500">Home</button>
 
             <button onClick= {() => navigate("/Upload")}

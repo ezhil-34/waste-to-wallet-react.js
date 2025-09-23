@@ -10,7 +10,7 @@ export default function Guideline() {
 
   return (
     <section className="mt-16 flex items-center justify-center">
-      <div className="w-full max-w-7xl dark:bg-gray-900 bg-white rounded-2xl shadow-2xl border border-gray-200 sm:p-12 p-8">
+      <div className="w-full  max-w-7xl dark:bg-gray-900 bg-white rounded-2xl shadow-2xl border border-gray-200 sm:p-12 p-8">
         <h5 className="text-center font-bold text-4xl dark:text-white">
         
          How Rewards Works

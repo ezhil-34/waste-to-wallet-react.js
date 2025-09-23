@@ -8,7 +8,7 @@ module.exports = {
     safelist: [
     'border-blue-500', 'border-green-500', 'border-yellow-500',
     'bg-blue-500', 'bg-green-500', 'bg-yellow-500',
-    'hover:shadow-blue-500', 'hover:shadow-green-500', 'hover:shadow-yellow-500'
+    'hover:shadow-blue-500', 'hover:shadow-green-500', 'hover:shadow-yellow-500', 'hover:shadow-sky-500'
   ],
   theme: {
     extend: {
