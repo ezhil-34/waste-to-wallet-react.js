@@ -13,7 +13,7 @@ export default function HowItWorks() {
       number: 2,
       color: "green",
       title: "Get Verified",
-      text: "Our verification system reviews and approves your submissions",
+      text: " Our verified collectors handle everything safely. ",
     },
     {
       number: 3,

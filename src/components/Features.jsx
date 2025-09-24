@@ -1,4 +1,4 @@
-import { RefreshCcw, Award, Gift } from "lucide-react";
+import { RefreshCcw, Gift, Truck } from "lucide-react";
 import coin from "../assets/icons8-coin-48.png";
 
 export default function Features() {
@@ -6,7 +6,7 @@ export default function Features() {
     return(
         <section className="flex flex-wrap mt-24 justify-center gap-6 sm:gap-8 py-14 px-6 sm:px-12">
             <FeatureCard color="blue" icon={<RefreshCcw className="text-blue-500 w-6 h-6 " />} title = "Easy Upload" text="Simply snap a photo of your recyclable waste and categorize it" />
-             <FeatureCard color="green" icon={<Award className="text-green-500 w-6 h-6 " />} title = "Smart Verification" text=" Our AI-powered system verifies your submissions and calculates rewards" />
+             <FeatureCard color="green" icon={<Truck className="text-green-500 w-6 h-6 " />} title = "Easy Pickup" text=" Schedule convenient pickups from your doorstep. Our verified collectors handle everything safely." />
               <FeatureCard color="yellow" icon={<img src={coin} alt="coin" className="w-6 h-6" />} title = "Earn Points" text=" Get rewards with points for every verified waste submission" />
                <FeatureCard color="purple" icon={<Gift className="text-purple-500 w-6 h-6 " />} title = "Redeem Rewards" text="Use your points for gift cards, cash or donations to charity" />
 
