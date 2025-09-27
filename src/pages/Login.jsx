@@ -1,16 +1,17 @@
 
 import React, { useContext } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { DarkModeContext } from "../App";
 
 export default function Login(){
+        const { role } = useParams();
          const navigate = useNavigate();
        
          const handleLogin = (e) => {
             e.preventDefault();
 
-            const storedUser = JSON.parse(localStorage.getItem("user"));
+            const storedUser = JSON.parse(localStorage.getItem(`${role}-user`));
             const email = e.target.email.value;
             const password = e.target.password.value;
 
@@ -20,8 +21,8 @@ export default function Login(){
                 storedUser.email === email &&
                 storedUser.password === password
             ){
-                 toast.success("Login successful!");
-                navigate("/Home");
+                 toast.success(`${role} Login successful!`);
+                navigate(role === "Citizen" ? "/Home" : "/Collect");
             }
             else{
                 toast.error("Invalid credentials");
@@ -34,7 +35,7 @@ export default function Login(){
                 <div className="w-full max-w-6xl h-[600px] bg-white rounded-3xl shadow-2xl border border-l-8 border-l-sky-500 border-sky-500 overflow-hidden flex">
                     <div className="w-3/5 bg-white text-center flex flex-col  items-center justify-center">
                         <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-green-500 font-bold text-5xl">Waste to Wallet</h1>
-                        <h2 className="text-sky-500 font-bold text-3xl mt-2" >Sign in</h2>
+                        <h2 className="text-sky-500 font-bold text-3xl mt-2" >Sign in as {role}</h2>
 
                         <form className="w-3/4 mt-8" onSubmit={handleLogin}>
                             <input 
@@ -73,7 +74,7 @@ export default function Login(){
                         <h2 className="text-white font-bold text-5xl  ">Welcome Back</h2>
                         <p className="text-white text-center mt-4 text-lg">Enter you details and start earning  <br /> and contribute to society</p>
                         <p className="text-white text-center mt-16 text-lg">Don't have an Account</p>
-                        <button onClick={() => navigate("/Signup") }
+                        <button onClick={() => navigate(`/Signup/${role}`) }
                             className=" bg-sky-500 border border-white text-white mt-2 px-16 py-3 shadow-md text-lg rounded-full">Sign up</button>
 
                     </div>
