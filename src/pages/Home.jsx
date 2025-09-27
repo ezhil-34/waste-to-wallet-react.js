@@ -8,7 +8,7 @@ import UploadSection from "../components/Hcard";
 export default function Home() {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const { darkMode } = useContext(DarkModeContext);
-
+  
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="min-h-screen bg-gradient-to-b from-sky-200 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-500">
