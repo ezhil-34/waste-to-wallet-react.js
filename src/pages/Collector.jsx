@@ -4,7 +4,9 @@ import { useContext } from "react";
 import { DarkModeContext } from "../App";
 import Dashboard from "../components/Dashboard";
 import Card from "../components/Ccard";
+import Pick from "../components/Pick";
 import { Leaf,Truck, Award, DollarSign } from "lucide-react";
+
 
 export default function Collect(){
      const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -27,6 +29,10 @@ export default function Collect(){
             <Card key={idx} {...s} />
            ))}
         </div>
+        <div>
+
+        </div>
+           <Pick />
 
         </div>
          
