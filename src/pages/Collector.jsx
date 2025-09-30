@@ -5,6 +5,7 @@ import { DarkModeContext } from "../App";
 import Dashboard from "../components/Dashboard";
 import Card from "../components/Ccard";
 import Pick from "../components/Pick";
+import Today from "../components/Today";
 import { Leaf,Truck, Award, DollarSign } from "lucide-react";
 
 
@@ -29,10 +30,19 @@ export default function Collect(){
             <Card key={idx} {...s} />
            ))}
         </div>
-        <div>
-
+       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6  mt-10">
+        {/* Nearby Pickup Requests - 75% width */}
+        <div className="lg:col-span-8 ml-12 mb-4">
+            <Pick />
         </div>
-           <Pick />
+
+        {/* Today’s Activity - 25% width */}
+        <div className="lg:col-span-4  " >
+            <Today />
+        </div>
+        </div>
+
+           
 
         </div>
          

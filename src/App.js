@@ -14,6 +14,7 @@ import Option from "./pages/Option";
 import Collect  from "./pages/Collector";
 
 
+
 export const DarkModeContext = createContext();
 function App() {
     
@@ -51,6 +52,7 @@ function App() {
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Option" element={<Option />} />
           <Route path="/Collect" element={<Collect />} />
+        
         </Routes>
          <ToastContainer position="top-right" autoClose={2000} />
          <Toaster position="top-center" reverseOrder={false} text-lg/>

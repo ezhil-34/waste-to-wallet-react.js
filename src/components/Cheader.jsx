@@ -53,7 +53,7 @@ export default function Mheader({ storedUser }) {
             ))}
 
             <button onClick={() => navigate("/Profile")}
-                className="ml-32 w-16 h-16 rounded-full bg-sky-500 text-white font-semibold text-2xl shadow hover:scale-105 transition transfor focus:outline-none focus:ring-2 focus:ring-sky-500"
+                className="ml-80 w-16 h-16 rounded-full bg-sky-500 text-white font-semibold text-2xl shadow hover:scale-105 transition transfor focus:outline-none focus:ring-2 focus:ring-sky-500"
                 >
                     {firstLetter}
                 </button>
