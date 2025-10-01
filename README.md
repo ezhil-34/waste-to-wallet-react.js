@@ -3,6 +3,7 @@
 Turn everyday recyclables into rewards!  
 Citizens upload details of recyclable waste (type + quantity + photo) → Partner recycling companies schedule pickups → Users earn points redeemable for **mobile recharges, metro cards, or groceries**.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![My Skills](https://skillicons.dev/icons?i=react,html,tailwindcss,javascript,express.js,mongodb,nodejs)](https://skillicons.dev)  
 
 ---
 
