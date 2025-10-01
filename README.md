@@ -33,7 +33,7 @@ Citizens upload details of recyclable waste (type + quantity + photo) → Partne
 
 -Frontend (React + Tailwind)
 │ REST API
--Backend (Flask + Python)
+-Backend (express.js )
 │ SQLAlchemy ORM
--Database (MySQL)
+-Database (Mongodb)
 
