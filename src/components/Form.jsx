@@ -74,16 +74,21 @@ export default function UploadForm({ items }) {
     formData.append("longitude", location.longitude);
   }
 
-  axios.post(`http://localhost:5000/api/waste`, formData, {
-  headers: { "Content-Type": "multipart/form-data" }
-})
-.then(res => {
-  toast.success("Waste submitted successfully!");
-})
-.catch(err => {
-  console.error("Upload error:", err.response?.data || err.message);
-  toast.error("Error submitting waste");
-});
+  try{
+    const res = await fetch(`http://localhost:5000/api/waste`, {
+      method: "POST",
+      body: formData
+    });
+    const data = await res.json();
+    if(data.success) {
+      toast.success("Waste submitted successfully!");
+
+    }else{
+      toast.error(data.message);
+    }
+  } catch (err){
+    toast.error("Error submitting waste");
+  }
 
   };
 

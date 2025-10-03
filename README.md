@@ -3,8 +3,7 @@
 Turn everyday recyclables into rewards!  
 Citizens upload details of recyclable waste (type + quantity + photo) → Partner recycling companies schedule pickups → Users earn points redeemable for **mobile recharges, metro cards, or groceries**.
 
-![License](https://img.shields.io/badge/license-MIT-green)
-![Stack](https://img.shields.io/badge/stack-React%20%2B%20Flask%20%2B%20MySQL-blue)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![My Skills](https://skillicons.dev/icons?i=react,html,tailwindcss,javascript,express,mongodb,nodejs)](https://skillicons.dev)  
 
 ---
 
@@ -33,7 +32,7 @@ Citizens upload details of recyclable waste (type + quantity + photo) → Partne
 
 -Frontend (React + Tailwind)
 │ REST API
--Backend (Flask + Python)
+-Backend (express.js )
 │ SQLAlchemy ORM
--Database (MySQL)
+-Database (Mongodb)
 
