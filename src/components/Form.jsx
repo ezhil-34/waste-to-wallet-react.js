@@ -1,29 +1,90 @@
 import React, { useState } from "react";
 import { FaUpload } from "react-icons/fa";
-import { Camera } from "lucide-react";
 import { toast } from "react-toastify";
+import axios from "axios";
+import L from "leaflet";
+import CategorySelect from "./CategorySelect";
+import QuantityInput from "./QuantityInput";
+import PhotoUpload from "./PhotoUpload";
+import LocationPicker from "./LocationPicker";
+
+
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinalUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+  iconUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  shadowUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+
+});
+
+
 
 export default function UploadForm({ items }) {
   const [category, setCategory] = useState(null);
   const [quantity, setQuantity] = useState("");
   const [photo, setPhoto] = useState(null);
+  const [location,setLocation] = useState(null);
+  const [address,setAddress] = useState("");
 
-  const handleSubmit = (e) => {
+  const getLocation = () => {
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          const coords = {
+         
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude,
+          };
+          setLocation(coords);
+
+          try {
+            const res = await axios.get(
+              `https://nominatim.openstreetmap.org/reverse?lat=${coords.latitude}&lon=${coords.longitude}&format=json`
+            );
+            setAddress(res.data.display_name);
+          } catch (err) {
+            console.error("Error fetching address", err);
+          }
+        },
+        () => alert("Location access denied")
+      );
+    } else {
+      alert("Geolocation not supported");
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!category || !quantity || !photo) {
+    if(!category || !quantity || !photo){
       alert("Please fill in all fields");
       return;
     }
-    const newEntry = {
-      category: category.name,
-      type: category.type,
-      quantity,
-      photoName: photo.name,
-      date: new Date().toLocaleString(),
-    };
-    const existing = JSON.parse(localStorage.getItem("recyclingData")) || [];
-    localStorage.setItem("recyclingData", JSON.stringify([newEntry, ...existing]));
-    toast.success("Saved! Data available in localStorage.");
+
+    const formData = new FormData();
+     formData.append("category", category.name);
+  formData.append("type", category.type);
+  formData.append("quantity", quantity);
+  formData.append("photo", photo);
+  formData.append("address", address);
+  if (location) {
+    formData.append("latitude", location.latitude);
+    formData.append("longitude", location.longitude);
+  }
+
+  axios.post(`http://localhost:5000/api/waste`, formData, {
+  headers: { "Content-Type": "multipart/form-data" }
+})
+.then(res => {
+  toast.success("Waste submitted successfully!");
+})
+.catch(err => {
+  console.error("Upload error:", err.response?.data || err.message);
+  toast.error("Error submitting waste");
+});
+
   };
 
   return (
@@ -33,57 +94,17 @@ export default function UploadForm({ items }) {
       </h5>
 
       <form onSubmit={handleSubmit}>
-        {/* Category */}
-        <label className="block dark:text-white text-xl font-bold mt-8 mb-1">
-          Waste Category
-        </label>
-        <select
-          value={category?.name || ""}
-          onChange={(e) => setCategory(items.find(i => i.name === e.target.value))}
-          className="w-full rounded-xl mt-4 h-12 border border-gray-300 p-3 focus:border-green-500 focus:ring-green-800"
-        >
-          <option value="">Select category</option>
-          {items.map(item => (
-            <option key={item.name} value={item.name}>
-              {item.name} – {item.points} pts/{item.type}
-            </option>
-          ))}
-        </select>
-
-        {/* Quantity */}
-        <label className="block text-xl mt-4 dark:text-white font-bold mb-1">
-          Quantity {category ? `(${category.type})` : ""}
-        </label>
-        <input
-          type="number"
-          min={0}
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-          placeholder="Enter Quantity"
-          className="w-full rounded-xl mt-4 border border-gray-300 p-3 focus:border-green-500"
-        />
-
-        {/* Upload Photo */}
-        <label className="block dark:text-white text-xl font-bold mt-4 mb-2">
-          Upload Photo
-        </label>
-        <label className="flex flex-col items-center mt-4 justify-center w-full border-2 border-dashed border-gray-300 rounded-2xl p-6 cursor-pointer hover:border-green-500">
-          <Camera className="text-green-500 mb-2" size={32} />
-          <span className="text-gray-500 dark:text-white text-xl font-bold text-center">
-            Take a photo of your recyclables
-          </span>
-          <span className="mt-4 text-xl inline-block px-4 py-1 bg-green-100 text-green-700 rounded-lg">
-            Take Photo
-          </span>
-          <input
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={(e) => setPhoto(e.target.files[0])}
+        <CategorySelect items={items} category={category} setCategory={setCategory}  />
+        <QuantityInput category={category} quantity={quantity} setQuantity={setQuantity} />
+        <PhotoUpload photo={photo} setPhoto={setPhoto} />
+        <LocationPicker 
+          location={location}
+          setLocation={setLocation}
+          address={address}
+          setAddress={setAddress}
+          getLocation={getLocation}
           />
-        </label>
-        {photo && <p className="mt-2 text-sm text-gray-600">Selected: {photo.name}</p>}
-
+        
         <button
           type="submit"
           className="w-full mt-4 text-2xl bg-sky-400 text-white py-3 rounded-xl font-bold hover:bg-green-600 transition"

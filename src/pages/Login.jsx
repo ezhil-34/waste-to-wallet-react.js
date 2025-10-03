@@ -8,25 +8,31 @@ export default function Login(){
         const { role } = useParams();
          const navigate = useNavigate();
        
-         const handleLogin = (e) => {
+         const handleLogin = async (e) => {
             e.preventDefault();
 
-            const storedUser = JSON.parse(localStorage.getItem(`${role}-user`));
+            
             const email = e.target.email.value;
             const password = e.target.password.value;
 
-            if(
+            const res = await fetch(`http://localhost:5000/api/auth/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify({email,password,role }),
+            });
 
-                storedUser &&
-                storedUser.email === email &&
-                storedUser.password === password
-            ){
-                 toast.success(`${role} Login successful!`);
-                navigate(role === "Citizen" ? "/Home" : "/Collect");
+            const data = await res.json();
+
+            if(res.ok) {
+                toast.success(`${role} Login successful!`);
+                localStorage.setItem("token",data.token);
+                localStorage.setItem("role",data.role);
+                navigate(role === "Citizen" ? "/Home" :"/Collect");
             }
             else{
-                toast.error("Invalid credentials");
+                toast.error(data.message);
             }
+           
          };
          const {darkMode } = useContext(DarkModeContext);
         return(
